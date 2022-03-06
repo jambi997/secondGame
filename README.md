@@ -1,6 +1,8 @@
 # secondGame
 this is the second game I worked on.  Development finished 2021 april, toke around 2-3 months
 
+you can try it here : https://jambi997.github.io/secondGame/
+
 The game has a save and load function on the start screen, to save your inventory.
 
 Clicking on start will takes us to the inventory, where we can gear up our 5 characters. Clicking on placing we can drag their icons onto the battlefield, and that will be their starting position. The menu button will take you back to the start menu where you can save and load.
