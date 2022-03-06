@@ -1,0 +1,128 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://misc/dungeonchooser.gd" type="Script" id=1]
+
+[node name="terkep" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Button" type="Button" parent="."]
+visible = false
+margin_left = -637.502
+margin_top = -379.031
+margin_right = -497.502
+margin_bottom = -298.031
+rect_pivot_offset = Vector2( 132.497, 81.4472 )
+text = "spider forest"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="second area" type="Button" parent="."]
+visible = false
+margin_left = -238.0
+margin_top = 108.0
+margin_right = 228.0
+margin_bottom = 318.0
+rect_pivot_offset = Vector2( 132.497, 81.4472 )
+text = "second area"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="adventure" type="Button" parent="."]
+margin_left = -655.19
+margin_top = 248.796
+margin_right = -459.19
+margin_bottom = 308.796
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 132.497, 81.4472 )
+text = "leads towards weak enemies"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="adventure2" type="Button" parent="."]
+margin_left = -122.303
+margin_top = 263.036
+margin_right = 121.697
+margin_bottom = 311.036
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 132.497, 81.4472 )
+text = "leads towards a lot of weak enemies"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="adventure3" type="Button" parent="."]
+margin_left = 501.298
+margin_top = 251.611
+margin_right = 659.298
+margin_bottom = 307.611
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 132.497, 81.4472 )
+text = "this path leads to a large spider"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="adventure5" type="Button" parent="."]
+visible = false
+margin_left = -83.3616
+margin_top = 451.836
+margin_right = 129.638
+margin_bottom = 507.836
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 132.497, 81.4472 )
+text = "this path seems dangerous"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="adventure6" type="Button" parent="."]
+visible = false
+margin_left = -649.333
+margin_top = 446.497
+margin_right = -436.334
+margin_bottom = 502.497
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 132.497, 81.4472 )
+text = "this path seems very dangerous"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="adventure4" type="Button" parent="."]
+margin_left = 543.738
+margin_top = -376.059
+margin_right = 730.738
+margin_bottom = -294.059
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 132.497, 81.4472 )
+text = "take your loot and go home"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -3.1748, 3.1748 )
+current = true
+zoom = Vector2( 1.4, 1.4 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = -513.686
+margin_top = -238.251
+margin_right = -124.686
+margin_bottom = -134.251
+rect_scale = Vector2( 3, 3 )
+text = "you see  paths ahead, choose one"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="second area" to="." method="_on_second_area_pressed"]
+[connection signal="pressed" from="adventure" to="." method="_on_adventure_pressed"]
+[connection signal="pressed" from="adventure2" to="." method="_on_adventure2_pressed"]
+[connection signal="pressed" from="adventure3" to="." method="_on_adventure3_pressed"]
+[connection signal="pressed" from="adventure5" to="." method="_on_adventure5_pressed"]
+[connection signal="pressed" from="adventure6" to="." method="_on_adventure6_pressed"]
+[connection signal="pressed" from="adventure4" to="." method="_on_adventure4_pressed"]

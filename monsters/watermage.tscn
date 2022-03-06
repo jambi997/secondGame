@@ -1,0 +1,411 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://monsters/watermage.gd" type="Script" id=1]
+[ext_resource path="res://art/spider/paklabak.png" type="Texture" id=2]
+[ext_resource path="res://art/freeart/kurva.png" type="Texture" id=3]
+[ext_resource path="res://art/spider/potroh.png" type="Texture" id=4]
+[ext_resource path="res://art/freeart/bruh (4).png" type="Texture" id=5]
+[ext_resource path="res://monsters/attack.gd" type="Script" id=6]
+[ext_resource path="res://art/freeart/random6464 (6).png" type="Texture" id=7]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 12.5872
+height = 47.3609
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 3 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "New Anim",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 23.9104
+height = 15.5959
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 17.4289, 9.46367 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 16.3882, 8.67994 )
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 39.6585
+
+[sub_resource type="CapsuleShape2D" id=7]
+radius = 14.5585
+height = 35.1098
+
+[sub_resource type="Animation" id=8]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("shadow/test/ColorRect/attack/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("shadow/test/ColorRect/attack/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("shadow/test/ColorRect/attacksense/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.918772 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("shadow/test:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("shadow/test/potroha:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("shadow/test/potroha:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("shadow/test/potroha:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("shadow/test/ColorRect/attack/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("shadow/test/ColorRect/attacksense/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.918772 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("shadow/test:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("shadow/test/potroha:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("shadow/test/potroha:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("shadow/test/potroha:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("shadow/test/ColorRect/attacksense/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("shadow/test:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("shadow/test/potroha:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1.85406, -0.662165 ), Vector2( 0, 0.794598 ) ]
+}
+
+[node name="watermage" type="KinematicBody2D"]
+z_index = 5
+collision_layer = 9
+collision_mask = 9
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.301577, 18.6712 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="shadow" type="Sprite" parent="."]
+position = Vector2( -1.84565, -1.61738 )
+
+[node name="test" type="AnimatedSprite" parent="shadow"]
+position = Vector2( 2.40354, -33.7027 )
+scale = Vector2( 2, 2 )
+z_index = 5
+frames = SubResource( 2 )
+animation = "New Anim"
+
+[node name="potroha" type="Sprite" parent="shadow/test"]
+visible = false
+self_modulate = Color( 1, 0, 0, 1 )
+position = Vector2( -0.918373, 0.0730186 )
+texture = ExtResource( 4 )
+
+[node name="fej" type="Sprite" parent="shadow/test"]
+visible = false
+texture = ExtResource( 2 )
+hframes = 4
+frame = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="shadow/test"]
+margin_left = -24.6497
+margin_top = -33.7303
+margin_right = 25.3503
+margin_bottom = -31.7303
+color = Color( 0.988235, 0.0862745, 0.0862745, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hitbox" type="Area2D" parent="shadow/test/ColorRect" groups=[
+"enemyhitbox",
+"hurtbox",
+]]
+collision_layer = 40
+collision_mask = 40
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shadow/test/ColorRect/hitbox"]
+position = Vector2( 25.9998, 42.1376 )
+shape = SubResource( 3 )
+
+[node name="attack" type="Area2D" parent="shadow/test/ColorRect" groups=[
+"damagebox",
+]]
+visible = false
+collision_layer = 16
+collision_mask = 2147483664
+script = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shadow/test/ColorRect/attack"]
+position = Vector2( 9.10008, 41.8542 )
+shape = SubResource( 4 )
+disabled = true
+
+[node name="attacksense" type="Area2D" parent="shadow/test/ColorRect"]
+visible = false
+collision_layer = 6
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shadow/test/ColorRect/attacksense"]
+position = Vector2( 12.138, 42.1566 )
+shape = SubResource( 5 )
+
+[node name="sense" type="Area2D" parent="shadow/test/ColorRect"]
+visible = false
+collision_layer = 6
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shadow/test/ColorRect/sense"]
+position = Vector2( 22.6102, 29.8778 )
+shape = SubResource( 6 )
+
+[node name="astimer" type="Timer" parent="shadow/test/ColorRect"]
+wait_time = 0.5
+one_shot = true
+
+[node name="fleetimer" type="Timer" parent="shadow/test/ColorRect"]
+
+[node name="chargesense" type="Area2D" parent="shadow/test/ColorRect"]
+visible = false
+collision_layer = 6
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shadow/test/ColorRect/chargesense"]
+position = Vector2( 24.1345, 42.169 )
+rotation = 1.5708
+shape = SubResource( 7 )
+
+[node name="chargetimer" type="Timer" parent="shadow/test/ColorRect/chargesense"]
+wait_time = 0.5
+autostart = true
+
+[node name="ColorRect2" type="ColorRect" parent="shadow/test"]
+visible = false
+margin_left = -11.2136
+margin_top = -40.2784
+margin_right = -10.2136
+margin_bottom = 3.72163
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hopptimer" type="Timer" parent="shadow/test"]
+wait_time = 3.0
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/attack = SubResource( 8 )
+anims/attack2 = SubResource( 9 )
+anims/idle = SubResource( 10 )
+anims/run = SubResource( 11 )
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+visible = false
+margin_left = -0.596672
+margin_top = -49.821
+margin_right = 0.403328
+margin_bottom = -5.82097
+color = Color( 0.227451, 0.894118, 0.152941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = 17.8934
+margin_top = -165.522
+margin_right = 68.8934
+margin_bottom = -139.522
+rect_scale = Vector2( 0.5, 0.5 )
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bullet" type="Node" parent="."]
+[connection signal="area_entered" from="shadow/test/ColorRect/hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_entered" from="shadow/test/ColorRect/attack" to="." method="_on_attack_area_entered"]
+[connection signal="area_exited" from="shadow/test/ColorRect/attack" to="." method="_on_attack_area_exited"]
+[connection signal="area_entered" from="shadow/test/ColorRect/attacksense" to="." method="_on_attacksense_area_entered"]
+[connection signal="area_exited" from="shadow/test/ColorRect/attacksense" to="." method="_on_attacksense_area_exited"]
+[connection signal="body_entered" from="shadow/test/ColorRect/sense" to="." method="_on_sense_body_entered"]
+[connection signal="body_exited" from="shadow/test/ColorRect/sense" to="." method="_on_sense_body_exited"]
+[connection signal="timeout" from="shadow/test/ColorRect/astimer" to="." method="_on_astimer_timeout"]
+[connection signal="timeout" from="shadow/test/ColorRect/chargesense/chargetimer" to="." method="_on_chargetimer_timeout"]
+[connection signal="timeout" from="shadow/test/hopptimer" to="." method="_on_hopptimer_timeout"]

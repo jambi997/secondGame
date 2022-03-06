@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 279.502, 76.999 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 26.9626, 73.8996 )
+
+[node name="dropzone" type="Area2D" groups=[
+"dropheroes",
+]]
+position = Vector2( -0.210224, 0.525558 )
+collision_layer = 65536
+collision_mask = 65536
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.636778, 93.0044 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( -268.557, 94.3021 )
+rotation = 0.471239
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2( 273.38, 93.2503 )
+rotation = -0.471239
+shape = SubResource( 2 )

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://armor/vorostextilpancel4.gd" type="Script" id=1]
+[ext_resource path="res://art/armors/vorosruhapancel3.png" type="Texture" id=2]
+
+[node name="chainvest2" type="Sprite"]
+modulate = Color( 0, 0.658824, 0.188235, 1 )
+texture = ExtResource( 2 )
+script = ExtResource( 1 )

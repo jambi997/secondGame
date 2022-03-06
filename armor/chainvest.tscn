@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://art/polo.png" type="Texture" id=1]
+[ext_resource path="res://armor/chainvest.gd" type="Script" id=2]
+
+[node name="chainvest" type="Sprite"]
+modulate = Color( 0.533333, 0.533333, 0.533333, 1 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )

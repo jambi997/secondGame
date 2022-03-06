@@ -1,0 +1,27 @@
+[gd_scene format=2]
+
+[node name="hpbar" type="ColorRect"]
+margin_left = -15.0
+margin_top = -29.0
+margin_right = 13.0
+margin_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color( 0.964706, 0.0470588, 0.0470588, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="rbar" type="ColorRect" parent="."]
+margin_left = 1.05025
+margin_top = 1.93934
+margin_right = 26.0503
+margin_bottom = 2.93934
+color = Color( 0.00392157, 0.968627, 0.878431, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="stamtimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true

@@ -1,0 +1,211 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://inventory/inventory/inventory.tscn" type="PackedScene" id=1]
+[ext_resource path="res://art/panel.png" type="Texture" id=2]
+[ext_resource path="res://inventory/inventory/inventory2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://inventory/inventory/invman2.gd" type="Script" id=4]
+[ext_resource path="res://inventory/inventory/Position2D.gd" type="Script" id=5]
+[ext_resource path="res://inventory/inventory/trashcan.tscn" type="PackedScene" id=6]
+
+[node name="invman" type="Node2D" groups=[
+"invent",
+]]
+script = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.215686, 0.172549, 0.172549, 1 )
+position = Vector2( 1.00007, 2.28195 )
+scale = Vector2( 6.23654, 3.86827 )
+texture = ExtResource( 2 )
+
+[node name="inventory" parent="." instance=ExtResource( 1 )]
+position = Vector2( 204.952, -145.26 )
+
+[node name="trashcan" parent="." instance=ExtResource( 6 )]
+position = Vector2( 194.176, 190.901 )
+
+[node name="inventory2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 203.952, 30.7401 )
+id = 1
+
+[node name="inventory3" parent="." instance=ExtResource( 1 )]
+position = Vector2( -341.048, -152.26 )
+id = 2
+
+[node name="inventory4" parent="." instance=ExtResource( 1 )]
+position = Vector2( -333.048, -2.2599 )
+id = 3
+
+[node name="inventory5" parent="." instance=ExtResource( 1 )]
+position = Vector2( -326.048, 150.74 )
+id = 4
+
+[node name="inventory6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 301, -147 )
+
+[node name="inventory7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 294, 35 )
+id = 1
+
+[node name="inventory8" parent="." instance=ExtResource( 3 )]
+position = Vector2( -239, 150 )
+id = 4
+
+[node name="inventory9" parent="." instance=ExtResource( 3 )]
+position = Vector2( -244, -3 )
+id = 3
+
+[node name="inventory10" parent="." instance=ExtResource( 3 )]
+position = Vector2( -244, -146 )
+id = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="Button" type="Button" parent="."]
+visible = false
+margin_left = 278.0
+margin_top = 119.0
+margin_right = 362.0
+margin_bottom = 173.0
+text = "next"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Position2D1" type="Position2D" parent="Node2D"]
+position = Vector2( -103.066, -205.035 )
+script = ExtResource( 5 )
+
+[node name="Position2D2" type="Position2D" parent="Node2D"]
+position = Vector2( -59.932, -205.035 )
+script = ExtResource( 5 )
+
+[node name="Position2D3" type="Position2D" parent="Node2D"]
+position = Vector2( -16.799, -205.035 )
+script = ExtResource( 5 )
+
+[node name="Position2D4" type="Position2D" parent="Node2D"]
+position = Vector2( 26.335, -205.742 )
+script = ExtResource( 5 )
+
+[node name="Position2D5" type="Position2D" parent="Node2D"]
+position = Vector2( 68.054, -205.742 )
+script = ExtResource( 5 )
+
+[node name="Position2D6" type="Position2D" parent="Node2D"]
+position = Vector2( -100.945, -137.153 )
+script = ExtResource( 5 )
+
+[node name="Position2D7" type="Position2D" parent="Node2D"]
+position = Vector2( -57.811, -137.153 )
+script = ExtResource( 5 )
+
+[node name="Position2D8" type="Position2D" parent="Node2D"]
+position = Vector2( -16.677, -136.153 )
+script = ExtResource( 5 )
+
+[node name="Position2D9" type="Position2D" parent="Node2D"]
+position = Vector2( 28.456, -137.86 )
+script = ExtResource( 5 )
+
+[node name="Position2D10" type="Position2D" parent="Node2D"]
+position = Vector2( 70.176, -137.86 )
+script = ExtResource( 5 )
+
+[node name="Position2D11" type="Position2D" parent="Node2D"]
+position = Vector2( -100.945, -71.3915 )
+script = ExtResource( 5 )
+
+[node name="Position2D12" type="Position2D" parent="Node2D"]
+position = Vector2( -57.811, -71.3915 )
+script = ExtResource( 5 )
+
+[node name="Position2D13" type="Position2D" parent="Node2D"]
+position = Vector2( -14.677, -71.3915 )
+script = ExtResource( 5 )
+
+[node name="Position2D14" type="Position2D" parent="Node2D"]
+position = Vector2( 28.456, -72.0986 )
+script = ExtResource( 5 )
+
+[node name="Position2D15" type="Position2D" parent="Node2D"]
+position = Vector2( 69.176, -74.0986 )
+script = ExtResource( 5 )
+
+[node name="Position2D16" type="Position2D" parent="Node2D"]
+position = Vector2( -101.066, 0.964996 )
+script = ExtResource( 5 )
+
+[node name="Position2D17" type="Position2D" parent="Node2D"]
+position = Vector2( -57.932, 0.964996 )
+script = ExtResource( 5 )
+
+[node name="Position2D18" type="Position2D" parent="Node2D"]
+position = Vector2( -14.799, 0.964996 )
+script = ExtResource( 5 )
+
+[node name="Position2D19" type="Position2D" parent="Node2D"]
+position = Vector2( 28.335, 0.257996 )
+script = ExtResource( 5 )
+
+[node name="Position2D20" type="Position2D" parent="Node2D"]
+position = Vector2( 70.054, 0.257996 )
+script = ExtResource( 5 )
+
+[node name="Position2D21" type="Position2D" parent="Node2D"]
+position = Vector2( -98.945, 68.8474 )
+script = ExtResource( 5 )
+
+[node name="Position2D22" type="Position2D" parent="Node2D"]
+position = Vector2( -55.811, 68.8474 )
+script = ExtResource( 5 )
+
+[node name="Position2D23" type="Position2D" parent="Node2D"]
+position = Vector2( -14.677, 69.8474 )
+script = ExtResource( 5 )
+
+[node name="Position2D24" type="Position2D" parent="Node2D"]
+position = Vector2( 30.456, 68.1403 )
+script = ExtResource( 5 )
+
+[node name="Position2D25" type="Position2D" parent="Node2D"]
+position = Vector2( 72.176, 68.1403 )
+script = ExtResource( 5 )
+
+[node name="Position2D26" type="Position2D" parent="Node2D"]
+position = Vector2( -98.945, 134.609 )
+script = ExtResource( 5 )
+
+[node name="Position2D27" type="Position2D" parent="Node2D"]
+position = Vector2( -55.811, 134.609 )
+script = ExtResource( 5 )
+
+[node name="Position2D28" type="Position2D" parent="Node2D"]
+position = Vector2( -12.677, 134.609 )
+script = ExtResource( 5 )
+
+[node name="Position2D29" type="Position2D" parent="Node2D"]
+position = Vector2( 30.456, 133.901 )
+script = ExtResource( 5 )
+
+[node name="Position2D30" type="Position2D" parent="Node2D"]
+position = Vector2( 72.176, 133.901 )
+script = ExtResource( 5 )
+
+[node name="Node" type="Node" parent="."]
+
+[node name="TextureButton" type="Button" parent="."]
+margin_left = 343.0
+margin_top = -237.0
+margin_right = 388.0
+margin_bottom = -200.0
+text = "exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]

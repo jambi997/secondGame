@@ -1,0 +1,13 @@
+[gd_scene format=2]
+
+[node name="RichTextLabel" type="RichTextLabel"]
+visible = false
+margin_left = 21.0
+margin_top = -27.0
+margin_right = 690.0
+margin_bottom = 336.0
+text = "asdasd"
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

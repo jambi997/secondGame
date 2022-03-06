@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://art/human.png" type="Texture" id=1]
+[ext_resource path="res://misc/draggeditemhos2.gd" type="Script" id=2]
+[ext_resource path="res://art/weapons/bigsword.png" type="Texture" id=3]
+[ext_resource path="res://art/polo.png" type="Texture" id=4]
+[ext_resource path="res://art/panel.png" type="Texture" id=5]
+[ext_resource path="res://art/freeart/spr_wep_mithril_baxe_0.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8.7643, 7.98148 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 5.86887, 4.86333 )
+
+[node name="draggeditem" type="KinematicBody2D"]
+scale = Vector2( 2, 2 )
+input_pickable = true
+collision_layer = 65536
+collision_mask = 2147549184
+script = ExtResource( 2 )
+id = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 0.222717 )
+shape = SubResource( 1 )
+
+[node name="Spritebase" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -0.21875, 0.855488 )
+scale = Vector2( 0.132644, 0.131501 )
+texture = ExtResource( 5 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 65536
+collision_mask = 65536
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.0392201, 0.32046 )
+scale = Vector2( 0.601025, 0.666695 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 11.1265, 7.13594, 29.7607, 24.2073 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 3.15491, -0.0782321 )
+scale = Vector2( 0.6229, 0.556684 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 17.6691, 2.16084, 26.9068, 33.2868 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( -4.35431, 0.662948 )
+scale = Vector2( 0.551827, 0.476166 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 232.865, 228.263, 15.0941, 32.075 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( -5.69217, 0.811599 )
+rotation = -1.5708
+scale = Vector2( 0.551827, 0.476166 )
+texture = ExtResource( 6 )
+region_enabled = true
+region_rect = Rect2( -3, -1, 28, 14 )
+[connection signal="input_event" from="." to="." method="_on_KinematicBody2D_input_event"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]

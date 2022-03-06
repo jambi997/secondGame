@@ -1,0 +1,129 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://characters/human2.gd" type="Script" id=1]
+[ext_resource path="res://misc/sense3.tscn" type="PackedScene" id=2]
+[ext_resource path="res://art/hair.png" type="Texture" id=3]
+[ext_resource path="res://art/hand.png" type="Texture" id=4]
+[ext_resource path="res://art/body.png" type="Texture" id=5]
+[ext_resource path="res://misc/charactersattack.tres" type="Animation" id=6]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 7.29538
+height = 5.50544
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 5.44004, 3.8172 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "reset"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("sense/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=5]
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 7.75
+height = 33.25
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 124.218
+
+[node name="human2" type="KinematicBody2D"]
+collision_layer = 9
+collision_mask = 9
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.911594, 20.7975 )
+rotation = -1.5708
+shape = SubResource( 1 )
+
+[node name="test" type="Sprite" parent="."]
+texture = ExtResource( 5 )
+
+[node name="haj" type="Sprite" parent="test"]
+texture = ExtResource( 3 )
+
+[node name="kez" type="Sprite" parent="test"]
+position = Vector2( -2.38379, 4.37029 )
+rotation = 0.523599
+texture = ExtResource( 4 )
+
+[node name="kez2" type="Sprite" parent="test"]
+position = Vector2( 2.60651, 2.78109 )
+rotation = -2.0944
+scale = Vector2( -1, 1 )
+texture = ExtResource( 4 )
+
+[node name="Position2D" type="Position2D" parent="test/kez2"]
+position = Vector2( -25.4228, -6.65845 )
+rotation = 0.682424
+
+[node name="Area2D" type="Area2D" parent="test"]
+collision_layer = 6
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="test/Area2D"]
+position = Vector2( -16.2394, -6.80628 )
+shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/attack = ExtResource( 6 )
+anims/reset = SubResource( 4 )
+anims/run = SubResource( 5 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="hitbox" type="Area2D" parent="." groups=[
+"hurtbox",
+]]
+collision_layer = 25
+collision_mask = 25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2( -1.48651, 1.2669 )
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="sense" type="Area2D" parent="."]
+visible = false
+collision_layer = 6
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sense"]
+position = Vector2( -0.353554, 1.06066 )
+shape = SubResource( 7 )
+disabled = true
+
+[node name="sense3" parent="." instance=ExtResource( 2 )]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -7.07108
+margin_top = -4.06586
+margin_right = 5.92892
+margin_bottom = 5.93414
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="area_entered" from="test/Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="test/Area2D" to="." method="_on_Area2D_area_exited"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="sense" to="." method="_on_sense_body_entered"]
+[connection signal="body_exited" from="sense" to="." method="_on_sense_body_exited"]
+[connection signal="body_entered" from="sense3" to="." method="_on_sense3_body_entered"]

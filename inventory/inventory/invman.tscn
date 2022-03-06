@@ -1,0 +1,700 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://inventory/inventory/inventory.tscn" type="PackedScene" id=1]
+[ext_resource path="res://art/panel.png" type="Texture" id=2]
+[ext_resource path="res://inventory/inventory/inventory2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://inventory/inventory/invman.gd" type="Script" id=4]
+[ext_resource path="res://inventory/inventory/Position2D.gd" type="Script" id=5]
+[ext_resource path="res://inventory/inventory/trashcan.tscn" type="PackedScene" id=6]
+
+[node name="invman" type="Node2D" groups=[
+"invent",
+]]
+script = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.215686, 0.172549, 0.172549, 1 )
+position = Vector2( 4.89748, -4.21137 )
+scale = Vector2( 10.1764, 6.18947 )
+texture = ExtResource( 2 )
+
+[node name="inventory" parent="." instance=ExtResource( 1 )]
+position = Vector2( 295.878, -206.209 )
+
+[node name="inventory2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 295.45, 53.6312 )
+id = 1
+
+[node name="inventory3" parent="." instance=ExtResource( 1 )]
+position = Vector2( -550.31, -327.784 )
+id = 2
+
+[node name="inventory4" parent="." instance=ExtResource( 1 )]
+position = Vector2( -569.054, -52.769 )
+id = 3
+
+[node name="inventory5" parent="." instance=ExtResource( 1 )]
+position = Vector2( -568.303, 217.789 )
+id = 4
+
+[node name="inventory6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 554.766, -100.763 )
+
+[node name="inventory7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 578.737, 169.178 )
+id = 1
+
+[node name="inventory8" parent="." instance=ExtResource( 3 )]
+position = Vector2( -301.438, 313.465 )
+id = 4
+
+[node name="inventory9" parent="." instance=ExtResource( 3 )]
+position = Vector2( -317.741, 54.9206 )
+id = 3
+
+[node name="inventory10" parent="." instance=ExtResource( 3 )]
+position = Vector2( -295.034, -213.925 )
+id = 2
+
+[node name="trashcan" parent="." instance=ExtResource( 6 )]
+position = Vector2( 380.596, 330.559 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="Button" type="Button" parent="."]
+margin_left = 450.153
+margin_top = 292.761
+margin_right = 534.153
+margin_bottom = 346.761
+text = "GO FIGHT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( -4.41916, 31.8841 )
+
+[node name="Position2D1" type="Position2D" parent="Node2D"]
+position = Vector2( -202.656, -358.657 )
+script = ExtResource( 5 )
+
+[node name="Position2D2" type="Position2D" parent="Node2D"]
+position = Vector2( -159.522, -358.657 )
+script = ExtResource( 5 )
+
+[node name="Position2D3" type="Position2D" parent="Node2D"]
+position = Vector2( -116.389, -358.657 )
+script = ExtResource( 5 )
+
+[node name="Position2D4" type="Position2D" parent="Node2D"]
+position = Vector2( -73.2546, -359.364 )
+script = ExtResource( 5 )
+
+[node name="Position2D5" type="Position2D" parent="Node2D"]
+position = Vector2( -31.5355, -359.364 )
+script = ExtResource( 5 )
+
+[node name="Position2D6" type="Position2D" parent="Node2D"]
+position = Vector2( -200.535, -290.775 )
+script = ExtResource( 5 )
+
+[node name="Position2D7" type="Position2D" parent="Node2D"]
+position = Vector2( -157.401, -290.775 )
+script = ExtResource( 5 )
+
+[node name="Position2D8" type="Position2D" parent="Node2D"]
+position = Vector2( -116.267, -289.775 )
+script = ExtResource( 5 )
+
+[node name="Position2D9" type="Position2D" parent="Node2D"]
+position = Vector2( -71.1336, -291.482 )
+script = ExtResource( 5 )
+
+[node name="Position2D10" type="Position2D" parent="Node2D"]
+position = Vector2( -29.4136, -291.482 )
+script = ExtResource( 5 )
+
+[node name="Position2D11" type="Position2D" parent="Node2D"]
+position = Vector2( -200.535, -225.014 )
+script = ExtResource( 5 )
+
+[node name="Position2D12" type="Position2D" parent="Node2D"]
+position = Vector2( -157.401, -225.014 )
+script = ExtResource( 5 )
+
+[node name="Position2D13" type="Position2D" parent="Node2D"]
+position = Vector2( -114.267, -225.014 )
+script = ExtResource( 5 )
+
+[node name="Position2D14" type="Position2D" parent="Node2D"]
+position = Vector2( -71.1336, -225.721 )
+script = ExtResource( 5 )
+
+[node name="Position2D15" type="Position2D" parent="Node2D"]
+position = Vector2( -30.4136, -227.721 )
+script = ExtResource( 5 )
+
+[node name="Position2D16" type="Position2D" parent="Node2D"]
+position = Vector2( -200.656, -152.657 )
+script = ExtResource( 5 )
+
+[node name="Position2D17" type="Position2D" parent="Node2D"]
+position = Vector2( -157.522, -152.657 )
+script = ExtResource( 5 )
+
+[node name="Position2D18" type="Position2D" parent="Node2D"]
+position = Vector2( -114.389, -152.657 )
+script = ExtResource( 5 )
+
+[node name="Position2D19" type="Position2D" parent="Node2D"]
+position = Vector2( -71.2546, -153.364 )
+script = ExtResource( 5 )
+
+[node name="Position2D20" type="Position2D" parent="Node2D"]
+position = Vector2( -29.5355, -153.364 )
+script = ExtResource( 5 )
+
+[node name="Position2D21" type="Position2D" parent="Node2D"]
+position = Vector2( -198.535, -84.7747 )
+script = ExtResource( 5 )
+
+[node name="Position2D22" type="Position2D" parent="Node2D"]
+position = Vector2( -155.401, -84.7747 )
+script = ExtResource( 5 )
+
+[node name="Position2D23" type="Position2D" parent="Node2D"]
+position = Vector2( -114.267, -83.7747 )
+script = ExtResource( 5 )
+
+[node name="Position2D24" type="Position2D" parent="Node2D"]
+position = Vector2( -69.1336, -85.4818 )
+script = ExtResource( 5 )
+
+[node name="Position2D25" type="Position2D" parent="Node2D"]
+position = Vector2( -27.4136, -85.4818 )
+script = ExtResource( 5 )
+
+[node name="Position2D26" type="Position2D" parent="Node2D"]
+position = Vector2( -198.535, -19.0131 )
+script = ExtResource( 5 )
+
+[node name="Position2D27" type="Position2D" parent="Node2D"]
+position = Vector2( -155.401, -19.0131 )
+script = ExtResource( 5 )
+
+[node name="Position2D28" type="Position2D" parent="Node2D"]
+position = Vector2( -112.267, -19.0131 )
+script = ExtResource( 5 )
+
+[node name="Position2D29" type="Position2D" parent="Node2D"]
+position = Vector2( -69.1336, -19.7211 )
+script = ExtResource( 5 )
+
+[node name="Position2D30" type="Position2D" parent="Node2D"]
+position = Vector2( -27.4136, -19.7211 )
+script = ExtResource( 5 )
+
+[node name="Position2D31" type="Position2D" parent="Node2D"]
+position = Vector2( 37.8425, -359.717 )
+script = ExtResource( 5 )
+
+[node name="Position2D32" type="Position2D" parent="Node2D"]
+position = Vector2( 80.9765, -359.717 )
+script = ExtResource( 5 )
+
+[node name="Position2D33" type="Position2D" parent="Node2D"]
+position = Vector2( 124.11, -359.717 )
+script = ExtResource( 5 )
+
+[node name="Position2D34" type="Position2D" parent="Node2D"]
+position = Vector2( 167.243, -360.424 )
+script = ExtResource( 5 )
+
+[node name="Position2D35" type="Position2D" parent="Node2D"]
+position = Vector2( 208.962, -360.424 )
+script = ExtResource( 5 )
+
+[node name="Position2D36" type="Position2D" parent="Node2D"]
+position = Vector2( 39.9635, -291.835 )
+script = ExtResource( 5 )
+
+[node name="Position2D37" type="Position2D" parent="Node2D"]
+position = Vector2( 83.0975, -291.835 )
+script = ExtResource( 5 )
+
+[node name="Position2D38" type="Position2D" parent="Node2D"]
+position = Vector2( 124.231, -290.835 )
+script = ExtResource( 5 )
+
+[node name="Position2D39" type="Position2D" parent="Node2D"]
+position = Vector2( 169.365, -292.542 )
+script = ExtResource( 5 )
+
+[node name="Position2D40" type="Position2D" parent="Node2D"]
+position = Vector2( 211.085, -292.542 )
+script = ExtResource( 5 )
+
+[node name="Position2D41" type="Position2D" parent="Node2D"]
+position = Vector2( 39.9635, -226.073 )
+script = ExtResource( 5 )
+
+[node name="Position2D42" type="Position2D" parent="Node2D"]
+position = Vector2( 83.0975, -226.073 )
+script = ExtResource( 5 )
+
+[node name="Position2D43" type="Position2D" parent="Node2D"]
+position = Vector2( 126.231, -226.073 )
+script = ExtResource( 5 )
+
+[node name="Position2D44" type="Position2D" parent="Node2D"]
+position = Vector2( 169.365, -226.78 )
+script = ExtResource( 5 )
+
+[node name="Position2D45" type="Position2D" parent="Node2D"]
+position = Vector2( 210.085, -228.78 )
+script = ExtResource( 5 )
+
+[node name="Position2D46" type="Position2D" parent="Node2D"]
+position = Vector2( 39.8425, -153.717 )
+script = ExtResource( 5 )
+
+[node name="Position2D47" type="Position2D" parent="Node2D"]
+position = Vector2( 82.9765, -153.717 )
+script = ExtResource( 5 )
+
+[node name="Position2D48" type="Position2D" parent="Node2D"]
+position = Vector2( 126.11, -153.717 )
+script = ExtResource( 5 )
+
+[node name="Position2D49" type="Position2D" parent="Node2D"]
+position = Vector2( 169.243, -154.424 )
+script = ExtResource( 5 )
+
+[node name="Position2D50" type="Position2D" parent="Node2D"]
+position = Vector2( 210.962, -154.424 )
+script = ExtResource( 5 )
+
+[node name="Position2D51" type="Position2D" parent="Node2D"]
+position = Vector2( 41.9635, -85.8342 )
+script = ExtResource( 5 )
+
+[node name="Position2D52" type="Position2D" parent="Node2D"]
+position = Vector2( 85.0975, -85.8342 )
+script = ExtResource( 5 )
+
+[node name="Position2D53" type="Position2D" parent="Node2D"]
+position = Vector2( 126.231, -84.8342 )
+script = ExtResource( 5 )
+
+[node name="Position2D54" type="Position2D" parent="Node2D"]
+position = Vector2( 171.365, -86.5413 )
+script = ExtResource( 5 )
+
+[node name="Position2D55" type="Position2D" parent="Node2D"]
+position = Vector2( 213.085, -86.5413 )
+script = ExtResource( 5 )
+
+[node name="Position2D56" type="Position2D" parent="Node2D"]
+position = Vector2( 41.9635, -20.0726 )
+script = ExtResource( 5 )
+
+[node name="Position2D57" type="Position2D" parent="Node2D"]
+position = Vector2( 85.0975, -20.0726 )
+script = ExtResource( 5 )
+
+[node name="Position2D58" type="Position2D" parent="Node2D"]
+position = Vector2( 128.232, -20.0726 )
+script = ExtResource( 5 )
+
+[node name="Position2D59" type="Position2D" parent="Node2D"]
+position = Vector2( 171.365, -20.7806 )
+script = ExtResource( 5 )
+
+[node name="Position2D60" type="Position2D" parent="Node2D"]
+position = Vector2( 213.085, -20.7806 )
+script = ExtResource( 5 )
+
+[node name="Position2D61" type="Position2D" parent="Node2D"]
+position = Vector2( -204.775, 38.6414 )
+script = ExtResource( 5 )
+
+[node name="Position2D62" type="Position2D" parent="Node2D"]
+position = Vector2( -161.641, 38.6414 )
+script = ExtResource( 5 )
+
+[node name="Position2D63" type="Position2D" parent="Node2D"]
+position = Vector2( -118.507, 38.6414 )
+script = ExtResource( 5 )
+
+[node name="Position2D64" type="Position2D" parent="Node2D"]
+position = Vector2( -75.3735, 37.9345 )
+script = ExtResource( 5 )
+
+[node name="Position2D65" type="Position2D" parent="Node2D"]
+position = Vector2( -33.6545, 37.9345 )
+script = ExtResource( 5 )
+
+[node name="Position2D66" type="Position2D" parent="Node2D"]
+position = Vector2( -202.654, 106.523 )
+script = ExtResource( 5 )
+
+[node name="Position2D67" type="Position2D" parent="Node2D"]
+position = Vector2( -159.52, 106.523 )
+script = ExtResource( 5 )
+
+[node name="Position2D68" type="Position2D" parent="Node2D"]
+position = Vector2( -118.386, 107.523 )
+script = ExtResource( 5 )
+
+[node name="Position2D69" type="Position2D" parent="Node2D"]
+position = Vector2( -73.2525, 105.816 )
+script = ExtResource( 5 )
+
+[node name="Position2D70" type="Position2D" parent="Node2D"]
+position = Vector2( -31.5325, 105.816 )
+script = ExtResource( 5 )
+
+[node name="Position2D71" type="Position2D" parent="Node2D"]
+position = Vector2( -202.654, 172.285 )
+script = ExtResource( 5 )
+
+[node name="Position2D72" type="Position2D" parent="Node2D"]
+position = Vector2( -159.52, 172.285 )
+script = ExtResource( 5 )
+
+[node name="Position2D73" type="Position2D" parent="Node2D"]
+position = Vector2( -116.386, 172.285 )
+script = ExtResource( 5 )
+
+[node name="Position2D74" type="Position2D" parent="Node2D"]
+position = Vector2( -73.2525, 171.578 )
+script = ExtResource( 5 )
+
+[node name="Position2D75" type="Position2D" parent="Node2D"]
+position = Vector2( -32.5325, 169.578 )
+script = ExtResource( 5 )
+
+[node name="Position2D76" type="Position2D" parent="Node2D"]
+position = Vector2( -202.775, 244.642 )
+script = ExtResource( 5 )
+
+[node name="Position2D77" type="Position2D" parent="Node2D"]
+position = Vector2( -159.641, 244.642 )
+script = ExtResource( 5 )
+
+[node name="Position2D78" type="Position2D" parent="Node2D"]
+position = Vector2( -116.507, 244.642 )
+script = ExtResource( 5 )
+
+[node name="Position2D79" type="Position2D" parent="Node2D"]
+position = Vector2( -73.3735, 243.934 )
+script = ExtResource( 5 )
+
+[node name="Position2D80" type="Position2D" parent="Node2D"]
+position = Vector2( -31.6545, 243.934 )
+script = ExtResource( 5 )
+
+[node name="Position2D81" type="Position2D" parent="Node2D"]
+position = Vector2( -200.654, 312.524 )
+script = ExtResource( 5 )
+
+[node name="Position2D82" type="Position2D" parent="Node2D"]
+position = Vector2( -157.52, 312.524 )
+script = ExtResource( 5 )
+
+[node name="Position2D83" type="Position2D" parent="Node2D"]
+position = Vector2( -116.386, 313.524 )
+script = ExtResource( 5 )
+
+[node name="Position2D84" type="Position2D" parent="Node2D"]
+position = Vector2( -71.2525, 311.817 )
+script = ExtResource( 5 )
+
+[node name="Position2D85" type="Position2D" parent="Node2D"]
+position = Vector2( -29.5325, 311.817 )
+script = ExtResource( 5 )
+
+[node name="Position2D86" type="Position2D" parent="Node2D"]
+position = Vector2( 37.8237, 45.7767 )
+script = ExtResource( 5 )
+
+[node name="Position2D87" type="Position2D" parent="Node2D"]
+position = Vector2( 80.9577, 45.7767 )
+script = ExtResource( 5 )
+
+[node name="Position2D88" type="Position2D" parent="Node2D"]
+position = Vector2( 124.091, 45.7767 )
+script = ExtResource( 5 )
+
+[node name="Position2D89" type="Position2D" parent="Node2D"]
+position = Vector2( 167.225, 45.0697 )
+script = ExtResource( 5 )
+
+[node name="Position2D90" type="Position2D" parent="Node2D"]
+position = Vector2( 208.944, 45.0697 )
+script = ExtResource( 5 )
+
+[node name="Position2D91" type="Position2D" parent="Node2D"]
+position = Vector2( 39.9447, 113.659 )
+script = ExtResource( 5 )
+
+[node name="Position2D92" type="Position2D" parent="Node2D"]
+position = Vector2( 83.0787, 113.659 )
+script = ExtResource( 5 )
+
+[node name="Position2D93" type="Position2D" parent="Node2D"]
+position = Vector2( 124.213, 114.659 )
+script = ExtResource( 5 )
+
+[node name="Position2D94" type="Position2D" parent="Node2D"]
+position = Vector2( 169.346, 112.952 )
+script = ExtResource( 5 )
+
+[node name="Position2D95" type="Position2D" parent="Node2D"]
+position = Vector2( 211.066, 112.952 )
+script = ExtResource( 5 )
+
+[node name="Position2D96" type="Position2D" parent="Node2D"]
+position = Vector2( 39.9447, 179.42 )
+script = ExtResource( 5 )
+
+[node name="Position2D97" type="Position2D" parent="Node2D"]
+position = Vector2( 83.0787, 179.42 )
+script = ExtResource( 5 )
+
+[node name="Position2D98" type="Position2D" parent="Node2D"]
+position = Vector2( 126.213, 179.42 )
+script = ExtResource( 5 )
+
+[node name="Position2D99" type="Position2D" parent="Node2D"]
+position = Vector2( 169.346, 178.713 )
+script = ExtResource( 5 )
+
+[node name="Position2D100" type="Position2D" parent="Node2D"]
+position = Vector2( 210.066, 176.713 )
+script = ExtResource( 5 )
+
+[node name="Position2D101" type="Position2D" parent="Node2D"]
+position = Vector2( 39.8237, 251.777 )
+script = ExtResource( 5 )
+
+[node name="Position2D102" type="Position2D" parent="Node2D"]
+position = Vector2( 82.9577, 251.777 )
+script = ExtResource( 5 )
+
+[node name="Position2D103" type="Position2D" parent="Node2D"]
+position = Vector2( 126.091, 251.777 )
+script = ExtResource( 5 )
+
+[node name="Position2D104" type="Position2D" parent="Node2D"]
+position = Vector2( 169.225, 251.07 )
+script = ExtResource( 5 )
+
+[node name="Position2D105" type="Position2D" parent="Node2D"]
+position = Vector2( 210.944, 251.07 )
+script = ExtResource( 5 )
+
+[node name="Position2D106" type="Position2D" parent="Node2D"]
+position = Vector2( 41.9447, 319.659 )
+script = ExtResource( 5 )
+
+[node name="Position2D107" type="Position2D" parent="Node2D"]
+position = Vector2( 85.0787, 319.659 )
+script = ExtResource( 5 )
+
+[node name="Position2D108" type="Position2D" parent="Node2D"]
+position = Vector2( 126.213, 320.659 )
+script = ExtResource( 5 )
+
+[node name="Position2D109" type="Position2D" parent="Node2D"]
+position = Vector2( 171.346, 318.952 )
+script = ExtResource( 5 )
+
+[node name="Position2D110" type="Position2D" parent="Node2D"]
+position = Vector2( 213.066, 318.952 )
+script = ExtResource( 5 )
+
+[node name="Node" type="Node" parent="."]
+
+[node name="char1" type="Button" parent="."]
+visible = false
+margin_left = -368.0
+margin_top = -225.0
+margin_right = -321.0
+margin_bottom = -193.0
+text = "char1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="char2" type="Button" parent="."]
+visible = false
+margin_left = -277.0
+margin_top = -225.0
+margin_right = -230.0
+margin_bottom = -195.0
+text = "char2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="."]
+visible = false
+margin_left = -216.0
+margin_top = -221.0
+margin_right = -152.0
+margin_bottom = -191.0
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="."]
+visible = false
+margin_left = -124.0
+margin_top = -224.0
+margin_right = -60.0
+margin_bottom = -194.0
+text = "2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="exit" type="Button" parent="."]
+margin_left = 500.256
+margin_top = -358.806
+margin_right = 572.256
+margin_bottom = -312.806
+text = "menü"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="."]
+margin_left = 366.576
+margin_top = -270.953
+margin_right = 550.576
+margin_bottom = -189.953
+text = "player"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 365.386
+margin_top = -5.67776
+margin_right = 591.386
+margin_bottom = 101.322
+text = "ally"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = -504.812
+margin_top = -368.004
+margin_right = -345.812
+margin_bottom = -349.004
+text = "ally"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="."]
+margin_left = -500.911
+margin_top = -122.125
+margin_right = -432.911
+margin_bottom = -103.124
+text = "ally"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="."]
+margin_left = -506.863
+margin_top = 180.139
+margin_right = -438.863
+margin_bottom = 199.139
+text = "ally"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="."]
+margin_left = 277.495
+margin_top = -150.057
+margin_right = 461.495
+margin_bottom = -69.0566
+text = "player"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label7" type="Label" parent="."]
+margin_left = 271.58
+margin_top = 114.273
+margin_right = 455.58
+margin_bottom = 195.273
+text = "player"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label8" type="Label" parent="."]
+margin_left = -589.406
+margin_top = -257.847
+margin_right = -405.406
+margin_bottom = -176.847
+text = "player"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label9" type="Label" parent="."]
+margin_left = -596.898
+margin_top = 23.8344
+margin_right = -412.898
+margin_bottom = 104.834
+text = "player"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label10" type="Label" parent="."]
+margin_left = -605.887
+margin_top = 265.062
+margin_right = -421.887
+margin_bottom = 346.062
+text = "player"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button4" type="Button" parent="."]
+margin_left = 367.039
+margin_top = -360.898
+margin_right = 430.039
+margin_bottom = -320.898
+text = "map"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button5" type="Button" parent="."]
+margin_left = 268.261
+margin_top = -360.898
+margin_right = 331.261
+margin_bottom = -320.898
+text = "placing"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="char1" to="." method="_on_char1_pressed"]
+[connection signal="pressed" from="char2" to="." method="_on_char2_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_Button4_pressed"]
+[connection signal="pressed" from="Button5" to="." method="_on_Button5_pressed"]

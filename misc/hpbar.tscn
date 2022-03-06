@@ -1,0 +1,25 @@
+[gd_scene format=2]
+
+[node name="hpbar" type="ColorRect"]
+margin_left = -15.0
+margin_top = -29.0
+margin_right = 13.0
+margin_bottom = -28.0
+color = Color( 0.964706, 0.0470588, 0.0470588, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="rbar" type="ColorRect" parent="."]
+margin_left = 1.58058
+margin_top = 1.85095
+margin_right = 26.5806
+margin_bottom = 2.85095
+color = Color( 0.00392157, 0.968627, 0.878431, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="stamtimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true

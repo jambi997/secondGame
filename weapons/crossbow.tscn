@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://weapons/crossbow.gd" type="Script" id=1]
+[ext_resource path="res://art/weapons/vossnbow.png" type="Texture" id=2]
+[ext_resource path="res://weapons/swordaea.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1.6801, 9.58814 )
+
+[node name="bow" type="Sprite" groups=[
+"ranged",
+]]
+position = Vector2( -5.52491, 2.47937 )
+rotation = 3.14159
+scale = Vector2( -1, 1 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 221.252, 232.862, 24.9609, 29.7778 )
+script = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="." groups=[
+"damagebox",
+]]
+visible = false
+position = Vector2( -16.25, -1.62493 )
+collision_layer = 16
+collision_mask = 16
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 12.6843, 1.95181 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="mouth" type="Position2D" parent="."]
+position = Vector2( -9.39309, 2.14021 )
+
+[node name="bullet" type="Node" parent="."]
+
+[node name="shoottimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="timeout" from="shoottimer" to="." method="_on_shoottimer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

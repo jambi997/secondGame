@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://misc/pause.gd" type="Script" id=1]
+
+[node name="pause" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = -50.2047
+margin_top = -16.2635
+margin_right = 51.7953
+margin_bottom = 19.7365
+text = "pause"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="."]
+margin_left = -46.0
+margin_top = 33.0
+margin_right = 49.0
+margin_bottom = 82.0
+text = "unpause"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="toggled" from="Button" to="." method="_on_Button_toggled"]
+[connection signal="toggled" from="Button2" to="." method="_on_Button2_toggled"]

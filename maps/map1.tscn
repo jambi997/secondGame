@@ -1,0 +1,161 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://maps/palyak.tscn" type="PackedScene" id=1]
+[ext_resource path="res://maps/map1.gd" type="Script" id=2]
+[ext_resource path="res://misc/draggeditem.tscn" type="PackedScene" id=3]
+[ext_resource path="res://misc/dropzone.tscn" type="PackedScene" id=4]
+[ext_resource path="res://misc/draggeditemhos.tscn" type="PackedScene" id=5]
+[ext_resource path="res://art/hatter/erdohatter.png" type="Texture" id=6]
+[ext_resource path="res://art/inventory.png" type="Texture" id=7]
+[ext_resource path="res://art/hatter/talajfu.png" type="Texture" id=8]
+[ext_resource path="res://misc/stateswapper.tscn" type="PackedScene" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 259.454, 123.452 )
+
+[node name="map1" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -112 )
+z_index = -4
+texture = ExtResource( 6 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 4.5, -114 )
+z_index = -4
+texture = ExtResource( 8 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 0.429108, 1.3588 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="palyak" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( -327686, 1, 0 )
+
+[node name="Area2D" parent="." instance=ExtResource( 4 )]
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="draggeditemhos" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( -160, -152 )
+
+[node name="KinematicBody2D" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( -56, -72 )
+id = 1
+
+[node name="KinematicBody2D6" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( -96, -72 )
+id = 0
+
+[node name="KinematicBody2D2" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( -16, -72 )
+id = 2
+
+[node name="KinematicBody2D3" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 24, -72 )
+
+[node name="KinematicBody2D4" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 64, -72 )
+id = 4
+
+[node name="KinematicBody2D5" parent="YSort" instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 144, -144 )
+id = 4
+
+[node name="hoslista" type="Node2D" parent="YSort"]
+
+[node name="Sprite" type="Sprite" parent="YSort/hoslista"]
+visible = false
+position = Vector2( 4.00001, -144 )
+scale = Vector2( 1.8125, 0.375 )
+z_index = -2
+texture = ExtResource( 7 )
+
+[node name="Position2D" type="Position2D" parent="YSort"]
+position = Vector2( 87.6244, 58.3407 )
+
+[node name="Button" type="Button" parent="."]
+modulate = Color( 0.392157, 0.882353, 0.803922, 1 )
+margin_left = 234.21
+margin_top = -65.1083
+margin_right = 316.21
+margin_bottom = -40.1083
+text = "start round"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="."]
+margin_left = -279.778
+margin_top = -165.121
+margin_right = -201.778
+margin_bottom = -133.121
+text = "back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="summonboss" type="Button" parent="."]
+margin_left = 222.349
+margin_top = -107.146
+margin_right = 325.349
+margin_bottom = -79.1463
+text = "summon boss"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="summonfinalboss" type="Button" parent="."]
+margin_left = 198.869
+margin_top = -155.301
+margin_right = 332.869
+margin_bottom = -127.301
+text = "summon final boss"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="inventory2add" type="Button" parent="."]
+margin_left = 244.885
+margin_top = -28.9262
+margin_right = 316.885
+margin_bottom = -8.92621
+text = "loot"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="loopbutton" type="Button" parent="."]
+margin_left = 186.0
+margin_top = -66.0
+margin_right = 226.0
+margin_bottom = -39.0
+text = "loop"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="stateswapper" parent="." instance=ExtResource( 9 )]
+visible = false
+
+[node name="stateswapper2" type="Area2D" parent="."]
+visible = false
+scale = Vector2( 5, 5 )
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stateswapper2"]
+shape = SubResource( 1 )
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="summonboss" to="." method="_on_summonboss_pressed"]
+[connection signal="pressed" from="summonfinalboss" to="." method="_on_summonfinalboss_pressed"]
+[connection signal="pressed" from="inventory2add" to="." method="_on_inventory2add_pressed"]
+[connection signal="pressed" from="loopbutton" to="." method="_on_loopbutton_pressed"]
+[connection signal="body_entered" from="stateswapper" to="." method="_on_stateswapper_body_entered"]
+[connection signal="body_exited" from="stateswapper" to="." method="_on_stateswapper_body_exited"]
+[connection signal="body_entered" from="stateswapper2" to="." method="_on_stateswapper2_body_entered"]
+[connection signal="body_exited" from="stateswapper2" to="." method="_on_stateswapper2_body_exited"]

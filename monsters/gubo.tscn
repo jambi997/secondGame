@@ -1,0 +1,162 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://art/spider/gubo.png" type="Texture" id=1]
+[ext_resource path="res://monsters/spider.gd" type="Script" id=5]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 2.24643
+height = 31.4486
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 14.9819
+
+[sub_resource type="Animation" id=3]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("shadow/test:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "attack2"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("shadow/test:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 0 ]
+}
+
+[sub_resource type="Animation" id=5]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("shadow/test:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("shadow/test:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[node name="spider" type="KinematicBody2D"]
+z_index = 5
+collision_layer = 9
+collision_mask = 9
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.220304, 11.2556 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="shadow" type="Sprite" parent="."]
+position = Vector2( -9.62394, -7.26158 )
+
+[node name="test" type="Sprite" parent="shadow"]
+position = Vector2( 10.1773, -4.97025 )
+z_index = 5
+texture = ExtResource( 1 )
+hframes = 4
+
+[node name="ColorRect" type="ColorRect" parent="shadow/test"]
+margin_left = -18.861
+margin_top = -30.889
+margin_right = 19.139
+margin_bottom = -29.889
+color = Color( 0.988235, 0.0862745, 0.0862745, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hitbox" type="Area2D" parent="shadow/test/ColorRect" groups=[
+"enemyhitbox",
+"hurtbox",
+]]
+collision_layer = 40
+collision_mask = 40
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="shadow/test/ColorRect/hitbox"]
+position = Vector2( 17.0757, 32.4487 )
+shape = SubResource( 2 )
+
+[node name="astimer" type="Timer" parent="shadow/test/ColorRect"]
+wait_time = 0.7
+one_shot = true
+
+[node name="borntimer" type="Timer" parent="shadow/test/ColorRect"]
+
+[node name="ColorRect2" type="ColorRect" parent="shadow/test"]
+visible = false
+margin_left = -11.2136
+margin_top = -40.2784
+margin_right = -10.2136
+margin_bottom = 3.72163
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/attack = SubResource( 3 )
+anims/attack2 = SubResource( 4 )
+anims/idle = SubResource( 5 )
+anims/run = SubResource( 6 )
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+visible = false
+margin_left = -0.596672
+margin_top = -49.821
+margin_right = 0.403328
+margin_bottom = -5.82097
+color = Color( 0.227451, 0.894118, 0.152941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = -16.9782
+margin_top = -49.9053
+margin_right = -8.9782
+margin_bottom = -35.9053
+rect_scale = Vector2( 0.5, 0.5 )
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="area_entered" from="shadow/test/ColorRect/hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="shadow/test/ColorRect/astimer" to="." method="_on_astimer_timeout"]
+[connection signal="timeout" from="shadow/test/ColorRect/borntimer" to="." method="_on_borntimer_timeout"]

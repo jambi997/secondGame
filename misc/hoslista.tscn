@@ -1,0 +1,83 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://misc/draggeditem.tscn" type="PackedScene" id=1]
+[ext_resource path="res://misc/draggeditemhos.tscn" type="PackedScene" id=2]
+[ext_resource path="res://misc/dragandrop.gd" type="Script" id=3]
+[ext_resource path="res://misc/draggeditemhos.gd" type="Script" id=4]
+[ext_resource path="res://art/inventory.png" type="Texture" id=5]
+
+[node name="hoslista" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 4.00001, -144 )
+scale = Vector2( 1.8125, 0.375 )
+texture = ExtResource( 5 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -37.0957, -146.414 )
+scale = Vector2( 2, 2 )
+input_pickable = true
+collision_layer = 65536
+collision_mask = 2147549184
+script = ExtResource( 3 )
+id = 1
+
+[node name="KinematicBody2D6" type="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -85.8862, -147.121 )
+scale = Vector2( 2, 2 )
+input_pickable = true
+collision_layer = 65536
+collision_mask = 2147549184
+script = ExtResource( 3 )
+id = 0
+
+[node name="KinematicBody2D2" type="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3.10881, -145.714 )
+scale = Vector2( 2, 2 )
+input_pickable = true
+collision_layer = 65536
+collision_mask = 2147549184
+script = ExtResource( 3 )
+id = 2
+
+[node name="KinematicBody2D3" type="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 51.5541, -144.652 )
+scale = Vector2( 2, 2 )
+input_pickable = true
+collision_layer = 65536
+collision_mask = 2147549184
+script = ExtResource( 3 )
+
+[node name="KinematicBody2D4" type="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 93.9547, -144.672 )
+scale = Vector2( 2, 2 )
+input_pickable = true
+collision_layer = 65536
+collision_mask = 2147549184
+script = ExtResource( 3 )
+id = 4
+
+[node name="KinematicBody2D5" type="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+visible = false
+position = Vector2( 144, -144 )
+scale = Vector2( 2, 2 )
+input_pickable = true
+collision_layer = 65536
+collision_mask = 2147549184
+script = ExtResource( 3 )
+id = 4
+
+[node name="draggeditemhos" type="KinematicBody2D" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.0901961, 0.682353, 0.839216, 1 )
+position = Vector2( -160, -152 )
+input_pickable = true
+collision_layer = 2147549184
+collision_mask = 65536
+script = ExtResource( 4 )
+[connection signal="input_event" from="KinematicBody2D" to="KinematicBody2D" method="_on_KinematicBody2D_input_event"]
+[connection signal="input_event" from="KinematicBody2D6" to="KinematicBody2D6" method="_on_KinematicBody2D_input_event"]
+[connection signal="input_event" from="KinematicBody2D2" to="KinematicBody2D2" method="_on_KinematicBody2D_input_event"]
+[connection signal="input_event" from="KinematicBody2D3" to="KinematicBody2D3" method="_on_KinematicBody2D_input_event"]
+[connection signal="input_event" from="KinematicBody2D4" to="KinematicBody2D4" method="_on_KinematicBody2D_input_event"]
+[connection signal="input_event" from="KinematicBody2D5" to="KinematicBody2D5" method="_on_KinematicBody2D_input_event"]
+[connection signal="input_event" from="draggeditemhos" to="draggeditemhos" method="_on_KinematicBody2D_input_event"]

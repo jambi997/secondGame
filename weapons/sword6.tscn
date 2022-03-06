@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://weapons/sword6.gd" type="Script" id=1]
+[ext_resource path="res://art/weapons/bigblacksword.png" type="Texture" id=2]
+[ext_resource path="res://weapons/swordaea.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5.78151, 22.8485 )
+
+[node name="sword3" type="Sprite" groups=[
+"melee",
+]]
+position = Vector2( -16.497, -1.6907 )
+rotation = 3.14159
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="." groups=[
+"damagebox",
+]]
+position = Vector2( -16.25, -1.62493 )
+collision_layer = 32
+collision_mask = 32
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -0.403503, -25.3423 )
+shape = SubResource( 1 )
+disabled = true
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
